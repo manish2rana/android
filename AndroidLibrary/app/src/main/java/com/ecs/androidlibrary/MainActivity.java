@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         new BackgroundSplashTask().execute();
     }
 
-    
+
     private class BackgroundSplashTask extends AsyncTask<Void, Void, Void> {
         CustomProgressDialog customProgressDialog;
 
