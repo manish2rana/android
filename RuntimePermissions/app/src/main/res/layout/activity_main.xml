@@ -9,25 +9,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="captureCameraImage"
-                android:layout_weight="1"
-                android:text="Open Camera" />
+            android:layout_weight="1"
+            android:onClick="captureCameraImage"
+            android:text="Open Camera" />
 
-            <ImageView
-                android:id="@+id/imgCapture"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="right"
-                android:background="@color/colorAccent"/>
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/imgCapture"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_gravity="right"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="readContact"
+            android:text="Read Contact" />
     </LinearLayout>
 
 
