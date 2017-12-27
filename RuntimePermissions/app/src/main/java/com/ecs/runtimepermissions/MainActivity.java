@@ -15,6 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -126,13 +127,12 @@ public class MainActivity extends AppCompatActivity {
                     if (c.moveToFirst()) {
                         String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                         String number = c.getString(c.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        Toast.makeText(this, number + " " + name, Toast.LENGTH_SHORT).show();
+                        TextView textView=findViewById(R.id.tvContact);
+                        textView.setText("Contact Name : "+name+" \nContact Number : "+number);
+                        textView.setVisibility(View.VISIBLE);
                     }
                 }
-
                 break;
-
-
         }
     }
 }
