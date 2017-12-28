@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.ContactsContract;
@@ -43,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void captureCameraImage(View view) {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            openCamera();
+            return;
+        }
+
         int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA);
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             boolean flag = ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA);
@@ -61,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void readSingleContact(View view) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            getContacts(0);
+            return;
+        }
         int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS);
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             boolean flag = ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS);
@@ -78,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void readAllContact(View view) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            getContacts(1);
+            return;
+        }
         int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS);
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             boolean flag = ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS);
