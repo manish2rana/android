@@ -29,14 +29,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="readContact"
-            android:text="Read Contact" />
+            android:onClick="readSingleContact"
+            android:text="Read Single Contact" />
+
         <TextView
             android:id="@+id/tvContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="readAllContact"
+            android:text="Read ALL Contact" />
     </LinearLayout>
 
 
