@@ -55,12 +55,6 @@ public class ContactAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        /*View rootView = View.inflate(activity, R.layout.list_row, null);
-        ContactDetail contactDetail=arrayList.get(i);
-        Holder holder = new Holder();
-        holder.contactName = (TextView) rootView.findViewById(R.id.tv_contactName);
-        holder.contactNumber = (TextView) rootView.findViewById(R.id.tv_contactNumber);
-        holder.imgContactPicture = (ImageView) rootView.findViewById(R.id.imgContactPicture);*/
         ViewHolder holder;
 
         if (convertView == null) {

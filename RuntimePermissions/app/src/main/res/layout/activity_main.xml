@@ -45,6 +45,4 @@
             android:onClick="readAllContact"
             android:text="Read ALL Contact" />
     </LinearLayout>
-
-
 </ScrollView>
