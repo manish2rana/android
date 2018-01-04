@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +15,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="showProgressBar"
-            android:text="Show Progress bar" />
+            android:text="Show Custom Progress bar" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showCustomViewPager"
+            android:text="Show Custom ViewPager" />
+        <ImageView
+            android:id="@+id/imgGalleryShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"/>
+
+        <pro.com.ecs.customimageviewpager.CustomImageViewpager
+            android:id="@+id/customImageViewpager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="0dp"
+            app:civp_animateCards="true"
+            app:civp_background="@android:color/white"
+            app:civp_lineSpacing="0dp"
+            app:civp_overlapCards="true"
+            app:civp_paddingBottom="5dp"
+            app:civp_paddingLeft="50dp"
+            app:civp_paddingRight="50dp"
+            app:civp_paddingTop="5dp"
+            app:civp_titleColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>
