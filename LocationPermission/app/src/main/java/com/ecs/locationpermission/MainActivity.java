@@ -13,7 +13,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private Location mylocation;
     private GoogleApiClient googleApiClient;
     private final static int REQUEST_CHECK_SETTINGS_GPS = 100;
-    private final static int REQUEST_ID_MULTIPLE_PERMISSIONS = 0x2;
+    private final static int REQUEST_ID_GPS_PERMISSIONS = 0x2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,20 +82,25 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
 
     private synchronized void setUpGClient() {
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, 0, this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
-        googleApiClient.connect();
+        if (googleApiClient == null) {
+            googleApiClient = new GoogleApiClient.Builder(this)
+                    .enableAutoManage(this, 0, this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+            googleApiClient.connect();
+        } else {
+            getMyLocation();
+        }
     }
 
 
     private void checkPermissions() {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            getMyLocation();
+            //getMyLocation();
+            setUpGClient();
             return;
         }
         int permissionLocation = ContextCompat.checkSelfPermission(MainActivity.this,
@@ -106,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             listPermissionsNeeded.add(android.Manifest.permission.ACCESS_FINE_LOCATION);
             if (!listPermissionsNeeded.isEmpty()) {
                 ActivityCompat.requestPermissions(this,
-                        listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+                        listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), REQUEST_ID_GPS_PERMISSIONS);
             }
         } else {
             getMyLocation();
@@ -182,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case REQUEST_ID_MULTIPLE_PERMISSIONS:
+            case REQUEST_ID_GPS_PERMISSIONS:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     setUpGClient();
                 } else {
