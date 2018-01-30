@@ -42,5 +42,25 @@
             app:civp_paddingRight="50dp"
             app:civp_paddingTop="5dp"
             app:civp_titleColor="@android:color/white" />
+
+        <pro.com.ecs.customedittext.TextField
+            android:id="@+id/text_field_boxes1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelText="Title"
+            app:maxCharacters="20">
+
+            <pro.com.ecs.customedittext.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="ABC" />
+
+        </pro.com.ecs.customedittext.TextField>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ksjdfhksjh"/>
     </LinearLayout>
 </ScrollView>

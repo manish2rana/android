@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidLibrary.iml" filepath="$PROJECT_DIR$/AndroidLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom_edittext/custom_edittext.iml" filepath="$PROJECT_DIR$/custom_edittext/custom_edittext.iml" />
       <module fileurl="file://$PROJECT_DIR$/customimageviewpager/customimageviewpager.iml" filepath="$PROJECT_DIR$/customimageviewpager/customimageviewpager.iml" />
       <module fileurl="file://$PROJECT_DIR$/customprogressdialog/customprogressdialog.iml" filepath="$PROJECT_DIR$/customprogressdialog/customprogressdialog.iml" />
     </modules>
