@@ -1,1 +1,0 @@
-include ':app', ':customprogressdialog', ':customimageviewpager', ':custom_edittext'

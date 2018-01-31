@@ -1,9 +1,0 @@
-<resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="civp_placeholder_horizontal">30dp</dimen>
-    <dimen name="civp_placeholder_horizontal_end">200dp</dimen>
-    <dimen name="civp_placeholder_vertical">20dp</dimen>
-
-    <dimen name="civp_lineSpacingTop">5dp</dimen>
-    <dimen name="civp_lineSpacingBottom">5dp</dimen>
-</resources>
